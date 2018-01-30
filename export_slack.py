@@ -26,6 +26,10 @@ import os
 from slacker import Slacker
 import time
 
+# TODO Add some timing to reduce the chance of running into overwhelming the API.
+
+# TODO Add logic where a channel is only pulled if it's not already listed in the dirs.
+
 # This script finds all channels, private channels ,and direct messages
 # that your user participates in, downloads the complete history for
 # those converations, and writes each conversation out to seperate JSON files.
@@ -227,3 +231,5 @@ if __name__ == "__main__":
 
 	if not args.skipDirectMessages:
 		getDirectMessages(slack, testAuth['user_id'], userIdNameMap, dryRun)
+
+	print "\nExport complete!"
